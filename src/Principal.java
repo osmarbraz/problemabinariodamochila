@@ -6,7 +6,7 @@
  * Prof Alexandre Gonçalves da Silva 
  * Baseado nos slides 48 da aula 03/11/2017 
  *
- * Página 310 Cormen 3 ed
+ * Página 310 Thomas H. Cormen 3 ed
  */
 
 /**
