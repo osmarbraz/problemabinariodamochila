@@ -4,9 +4,13 @@
  * Programa de Pós-Graduação em Ciências da Computação - PROPG
  * Disciplinas: Projeto e Análise de Algoritmos
  * Prof Alexandre Gonçalves da Silva 
+ *
  * Baseado nos slides 48 da aula 03/11/2017 
  *
- * Página 310 Thomas H. Cormen 3 ed
+ * Página 310 Thomas H. Cormen 3a Ed
+ *
+ * Problema Binário da Mochila
+ *
  */
 
 /**
@@ -28,7 +32,19 @@ public class Principal {
      */
     public static void imprimirTabela(int[] c, int[] w, int W, int n) {
 
-        System.out.println("Tabela Calculada do Problema Binário da Mochila");
+        System.out.println("\nTabela Calculada do Problema Binário da Mochila:");
+        
+        System.out.print("c={");
+        for (int i = 0; i < c.length; i++) {
+            System.out.printf("%d,", c[i]);
+        }
+        System.out.print("}  ");
+        System.out.print("w={");
+        for (int i = 0; i < w.length; i++) {
+            System.out.printf("%d,", w[i]);
+        }
+        System.out.print("}");
+        System.out.println("  W=" + W);
         System.out.printf("k\\d \t");
         for (int d = 0; d <= W; d++) {
             System.out.printf(" %d \t", d);
@@ -45,6 +61,7 @@ public class Principal {
 
     /**
      * Método auxiliar da solução do problema binário da mochila.
+     * 
      *
      * @param x Vetor de resposta do problema
      * @param z Matriz do resultado
@@ -53,11 +70,11 @@ public class Principal {
      * @param d Capacidade da mochila
      */
     public static void mochilaSolucaoAux(int[] x, int[][] z, int[] w, int k, int d) {
-        if (k != 0) {
+        if (k != 0) {            
             if (z[k][d] == z[k - 1][d]) {
                 x[k - 1] = 0;
-                mochilaSolucaoAux(x, z, w, k - 1, d);
-            } else {
+                mochilaSolucaoAux(x, z, w, k - 1, d);                
+            } else {                
                 x[k - 1] = 1;
                 mochilaSolucaoAux(x, z, w, k - 1, d - w[k - 1]);
             }
@@ -130,15 +147,15 @@ public class Principal {
         //Recupera a solução
         int[] x = mochilaSolucao(z, w, n, W);
 
-        System.out.println("Solução:");
+        System.out.println("\nSolução:");
         for (int i = 0; i < x.length; i++) {
             System.out.println("x[" + (i + 1) + "]=" + x[i]);
         }
-        System.out.println("\n Itens a serem inseridos:");
+        System.out.println("\nItens a serem inseridos:");
         int total = 0;
         for (int i = 0; i < x.length; i++) {
             if (x[i] == 1) {
-                System.out.println("w[" + (i + 1) + "]=" + w[i]);
+                System.out.println("w[" + (i + 1) + "]=" + w[i] + " de valor c[" + (i + 1) + "]=" + c[i]);
                 total = total + c[i];
             }
         }
