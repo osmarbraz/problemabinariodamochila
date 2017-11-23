@@ -118,11 +118,11 @@ public class Principal {
             z[k][0] = 0;
         }
         for (int k = 1; k <= n; k++) {
-            for (int d = 1; d <= W; d++) {
+            for (int d = 1; d <= W; d++) {                
                 z[k][d] = z[k - 1][d];
                 if ((w[k - 1] <= d) && ((c[k - 1] + (z[k - 1][d - w[k - 1]])) > z[k][d])) {
                     z[k][d] = c[k - 1] + (z[k - 1][d - w[k - 1]]);
-                }
+                } 
             }
         }
     }
