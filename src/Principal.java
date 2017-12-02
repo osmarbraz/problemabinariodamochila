@@ -2,7 +2,7 @@
  * Universidade Federal de Santa Catarina - UFSC
  * Departamento de Informática e Estatística - INE
  * Programa de Pós-Graduação em Ciências da Computação - PROPG
- * Disciplinas: Projeto e Análise de Algoritmos
+ * Disciplina: Projeto e Análise de Algoritmos
  * Prof Alexandre Gonçalves da Silva 
  *
  * Baseado nos slides 48 da aula 03/11/2017 
